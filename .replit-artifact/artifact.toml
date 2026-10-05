@@ -1,0 +1,24 @@
+kind = "mobile"
+previewPath = "/near-me-reminder/"
+title = "NearMe Reminder"
+description = "An Android-first personal reminder app that stores reminders locally, monitors saved places through low-power geofences, and sends a notification when the user enters a configured area."
+version = "1.0.0"
+id = "artifacts/near-me-reminder"
+router = "expo-domain"
+
+[[services]]
+name = "expo"
+ensurePreviewReachable = "/status"
+paths = [ "/near-me-reminder/" ]
+localPort = 24438
+
+[services.development]
+run = "pnpm --filter @workspace/near-me-reminder run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/near-me-reminder", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/near-me-reminder", "run", "serve" ]
+
+[services.env]
+PORT = "24438"
+BASE_PATH = "/near-me-reminder/"
