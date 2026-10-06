@@ -1,0 +1,7 @@
+packages:
+  - '.'
+  - 'lib/api-client-react'
+
+catalog:
+  '@tanstack/react-query': '5.102.8'
+  'zod': '3.25.76'
